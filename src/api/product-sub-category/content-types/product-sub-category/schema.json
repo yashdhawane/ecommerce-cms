@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_sub_categories",
+  "info": {
+    "singularName": "product-sub-category",
+    "pluralName": "product-sub-categories",
+    "displayName": "ProductSubCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "product_sub_categories"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
+    }
+  }
+}
